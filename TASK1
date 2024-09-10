@@ -1,0 +1,51 @@
+from sklearn.datasets import load_iris  # Replace with your dataset if different
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.svm import SVC
+from sklearn.metrics import accuracy_score, classification_report
+
+# Step 1: Load and Prepare the Data
+# Load the dataset (e.g., Iris dataset for simplicity)
+data = load_iris()
+X = data.data  # Features
+y = data.target  # Target labels
+
+# Split the dataset into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Step 2: Train the Models
+
+# Initialize the RandomForestClassifier and train it
+rf_model = RandomForestClassifier(random_state=42)
+rf_model.fit(X_train, y_train)
+
+# Initialize the SVC (Support Vector Classifier) and train it
+svm_model = SVC(random_state=42)
+svm_model.fit(X_train, y_train)
+
+# Step 3: Make Predictions
+
+# Use the trained models to make predictions on the test data
+rf_predictions = rf_model.predict(X_test)
+svm_predictions = svm_model.predict(X_test)
+
+# Step 4: Evaluate the Models
+
+# Calculate and print the accuracy for both models
+print("Random Forest Accuracy:", accuracy_score(y_test, rf_predictions))
+print("SVM Accuracy:", accuracy_score(y_test, svm_predictions))
+
+# Print the classification report for both models
+print("\nRandom Forest Classification Report:\n", classification_report(y_test, rf_predictions))
+print("SVM Classification Report:\n", classification_report(y_test, svm_predictions))
+import pandas as pd
+
+try:
+    df = pd.read_csv('C:/Users/91901/Desktop/comparision/data.csv')
+    print("File loaded successfully!")
+except FileNotFoundError as e:
+import data_preparation
+import model_training
+import model_evaluation
+
+print("Modules imported successfully.")    print(f"Error: {e}")
