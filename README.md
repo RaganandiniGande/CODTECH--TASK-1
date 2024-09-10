@@ -1,9 +1,15 @@
 Name: Gande Raganandini
+
 Company: CODTECH IT SOLUTIONS 
+
 ID:CT08DS6779
+
 Domain:ARTIFICAL INTELLIGENCE
+
 Duration:AUG TO SEP 2024
+
 Overview of the project: Model evaluation and comparison 
+
 *Model Evaluation Objectives:*
 
 1. *Performance Measurement*: Assess the RL agent's performance in the game environment using metrics such as:
